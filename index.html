@@ -9,10 +9,60 @@
 </head>
 <body>
   <style>
-    body{
-  margin: 0px;
-  padding: 0px;
-  min-width: 320px;
+    /* Base styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Section styling */
+section {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+/* Responsive grid layout */
+@media (min-width: 600px) {
+    .tutorial-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+@media (min-width: 900px) {
+    .tutorial-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 1200px) {
+    .tutorial-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Make headings responsive */
+h2 {
+    font-size: 1.3rem;
+}
+
+@media (min-width: 600px) {
+    h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Responsive text */
+p {
+    font-size: 1rem;
+}
 }
     header{
 
