@@ -12,17 +12,29 @@
     /* Base styles */
 body {
     font-family: Arial, sans-serif;
-    
+      min-width: 320px;
     margin: 0;
     padding: 0px;
     box-sizing: border-box;
 }
+header{
 
+      width: 100%;
+
+      height: 7.5vh;
+      position: fixed;
+      background:#374554;
+      display: ;
+    }
+    header section{
+      align-items: center;
+			justify-content: center;
+	}
 /* Section styling */
 
 
 /* Responsive grid layout */
-@media (min-width: 600px) {
+@media (min-width: 320px) {
     .tutorial-container {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
