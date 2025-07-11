@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" conteent="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <script src="js/index.js"></script>
+  <title>jQuery app</title>
+</head>
+<body>
+  <style>
+    body{
+  margin: 0px;
+  padding: 0px;
+  min-width: 320px;
+}
+    header{
+
+      width: 100%;
+
+      height: 7.5vh;
+      position: fixed;
+      background:#374554;
+      display: ;
+    }
+    header section{
+      align-items: center;
+			justify-content: center;
+    }
+    o{
+      background-color:#e5e6e6 ;
+      color: red;
+    }
+              .grid{
+
+    	display: flex;
+    justify-content: center;
+    	flex-wrap: wrap;
+    	padding:1px;
+    	margin: 5px;
+    	gap:8px;
+    	padding-bottom:1px;
+    	
+    }
+    .card{
+    		min-width: 38%;
+    	height:130px;
+      	background-color:#fff;
+    	border-radius:10px;
+    	box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+			border:3px solid #fff;
+			display: flex;
+			margin-top: 4px;
+			flex-direction:column;
+			align-items: center;
+			justify-content: center;
+			padding:7.5px;
+			color:#fff;
+    }
+    
+    .card > span{
+    	font-size:8px;
+    }
+    .card >  a{
+    	padding:3px;
+    	font-size:11px;
+    	background:#374554;
+    	width:68px;
+    	height:10px;
+    	color:white;
+    	text-align: center;
+    	margin:3px;
+    	animation-duration: 2s;
+    	border-radius: 5px;
+    	font-family: Times New Roman;
+    	text-decoration:none;
+    	transition-duration: 1s;
+    	
+    }
+    .card > a:hover{
+      background-color: none;
+    }
+    .bottom-nav{
+      width:100%;
+      height:70px;
+    		background:#54606d;
+     border-radius: 0px;
+     text-align: center;
+     align-items: center;
+
+			justify-content: center;
+    padding:2px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+	color:#000;
+	display: flex;
+	gap: 28%;
+    }
+      .bottom-nav >.pre> a{
+    	margin-top: 10px;
+    	margin:10px;
+    	text-decoration:none;
+    	font-size: 15px;
+    	font-weight: bold;
+    	font-family: Times New Roman, Trebuchet MS;
+    	color:white;
+    }
+    .bottom{
+    	 	position: fixed;
+    	bottom:0;
+    	left:0;
+    	width:100%;
+    	height:auto;
+    	padding:0px;
+    	background-color: #0000;
+ flex-direction:column;
+			align-items: center;
+			justify-content: center;
+z-index:1;
+    }
+    .bottom-nav > {
+    	display: ;
+    	flex-direction: column;
+    text-align: center;
+    width:30px;
+    	 flex-direction:column;
+			align-items: center;
+			justify-content: center;
+padding:5px;
+background-color: fgt;
+font-size:12px;
+
+    }
+   
+    input[type="radio"] {
+    	display: none;
+    }
+    .AllView{
+    padding-bottom:100px;
+    	display: none;
+    }
+    input:checked ~ .AllView{
+    	display: block;
+    }
+
+    .codeView{
+    	position: fixed;
+    	background:#fff;
+    	width:100%;
+    	height:100vh;
+    	
+    }
+    .Steps{
+    	position:fixed;
+    	top:0;
+    	z-index:2;
+    	left:0;
+    	width:device;
+    	height:90vh;
+    	overflow:scroll;
+    	background-color:#fff;
+    	padding:10px;
+    	color:#000;
+    	padding-bottom:100px;
+    	display: none;
+    }
+  .Steps:target{
+    	display: block;
+    }
+    pre{
+    	background:#29292a;
+overflow-x: scroll;
+    	padding:0px;
+overflow:scroll;
+    	width:299px;
+    	color:#84959a;
+    	margin-top:px;
+border-radius:0px;
+    	font-size:12px;
+    	border: none;
+    }
+    .close{
+    width:35px;
+    height:20px;
+    padding:5px;
+    position:absolute;
+   right:40px;
+   top:3px;
+    background:#fff;
+    border-radius:5px;
+    font-size:15px;
+    font-weight:500;
+   color:#000;
+   z-index:2;
+    }
+    textarea{
+      background:#29292a;
+
+    	padding:0px;
+
+    	width:307px;
+    	color:#fff;
+    	margin-top:px;
+border-radius:10px;
+    	font-size:10px;
+    	border: none;
+    }
+    .cav{
+      border-radius:5px;
+      background-color: #000;
+      color:#fff;
+      width:299px;
+    }
+        .flex{
+      display: ;
+      padding: 5px;
+    }
+    button{
+      font-weight: bold;
+      margin-right: 10px;
+      float: right;
+      outline: none;
+      color: #fff;
+      border: none;
+      background: #000;
+    }
+    .nav{
+    	position:fixed;
+    	top:0;
+    	width:100%;
+    	padding:10px;
+    	display:flex;
+    	background:#374554;
+    	left:0;
+    	text-align: center;
+    	padding-top:10px;
+    	color:#fff;
+    	z-index:2;
+    }
+    span{
+      padding: 5px;
+      margin-right:3px ;
+    }
+.pre{
+    	background:#29292a;
+    	padding:0px;
+    	width:280px;
+    	height: 60px;
+    	color:#87c1d2;
+    	overflow:scroll;
+    	margin-top:0px;
+border-radius:10px;
+    	font-size:12px;
+    	border: none;
+    }
+    mark{
+      color: black;
+      background-color: #7dfb7d;
+    }
+        @media (max-width: 480px) {
+      .grid {
+        grid-template-columns: 1fr;
+        padding: 10px;
+      }
+  </style>
+  <header>
+    <img src="ic_view_headline_white_24dp.png" width="35px" style="float:left;border-radius:50%;background:#000;margin:2px;"/><br><center><section style="font-size:25px; font-weight:bold;margin-right:75px;align-items: center;color:white;font-familt:">jQuery Tutorial</section></center>
+  </header>
+  <br><br><br>
+  <br><br><br>
+  
+        <section style="font-size:24px; font-weight:bold;margin-right:35px;">jQuery Tutorial</section>
+
+  
+ <span style="position: ;color:#000;bottom:0;font-siz:5px;font-weight:300;margin-right:30px;">jQuery is easy to learn.<uo style="color:blue">Code less</uo>.Do more!</span>
+    <br>
+    <div class="grid" id="grid">
+				
+		
+				</div>
+
+		
+					
+<script>
+ 
+       
+  // You can continue to add more topics here...
+
+
+var Topics = [
+  {
+    title: "jQ Introduction ",
+    narate: "****",
+    text: "<h2>What is jQuery?</h2>jQuery is a lightweight, 'write less, do more', JavaScript library.<br><br>The purpose of jQuery is to make it much easier to use JavaScript on your website.<br><br>jQuery takes a lot of common tasks that require many lines of JavaScript code to accomplish, and wraps them into methods that you can call with a single line of code.<br><br>jQuery also simplifies a lot of the complicated things from JavaScript, like AJAX calls and DOM manipulation.<br><br>The jQuery library contains the following features:<br><br> <ul><li>HTML/DOM manipulation</li><li>CSS manipulation</li><li>HTML event methods </li><li>Effects animations </li><li>Utilities</li><li>AJAX</li></ul> Tip: In addition, jQuery has plugins for almost any task out there.<br> <h2>Why jQuery?</h2>There are lots of other JavaScript libraries out there, but jQuery is probably the most popular, and also the most extendable.Many of the biggest companies on the Web use jQuery, such as:<br><br> <ul><li>Google</li><li>Microsoft</li><li>IBM </li><li>Netflix</li></ul>Before you start studying jQuery, you should have a basic knowledge of:<br><ul><li>HTML</li><li>CSS</li><li>JavaScript</li>" +
+      "<br><br><div class='bottom'><div class='bottom-nav'><div class='pre'><a href='pd files.html'><img src='icon/JS.png'width='50px'height='50px'style='border-radius:20px;margin-top: 5px;'onclick='aler'/><i>Learn JavaScript</i></a></div></div></div>"
+  },
+  {
+    title: "jQ Syntax ",
+    narate: "20mins",
+    text: "<h2>jQuery Syntax</h1><p>The jQuery syntax is tailor-made for selecting HTML elements and performing some action on the element(s).<br>Basic syntax is: <strong>$(selector).action()</strong></p><br><ul> <li> $ sign to define/access jQuery</li><li>A (selector) to 'query (or find)' HTML elements</li><li>A jQuery action() to be performed on the element(s)</li><br>Examples:<br><br><li>$(this).hide() - hides the current element.</li><br><li>$('p').hide() - hides all elements.</li><br><li>$('.test').hide() - hides all elements with class='test'.</li><br><li>$('#test').hide() - hides the element with id='test'.</li><br></ul><br>" +
+      " <div class='cav'><div class='flex'><strong>jQuery-Code</strong><button style='float: rig;'>Copy</button></div><pre>$(document).ready(function(){\n\n// jQuery methods go here...\n\n});\n\n\n\n</pre></div></div>"
+  }, {
+    title: "jQ Selectors",
+    narate: "25mins",
+    text: "<h2>jQuery Selectors</h2>\n\njQuery selectors allow you to select and manipulate HTML element(s).\n\n<br><br>jQuery selectors are used to 'find' (or select) HTML elements based on their name, id, classes, types, attributes, values of attributes and much more. It's based on the existing CSS Selectors, and in addition, it has some own custom selectors.\n\n<br><br> All selectors in jQuery start with the dollar sign and parentheses: $().\n\n" +"<h2>The element Selector</h2>The jQuery element selector selects elements based on the element name.<br><br>You can select all<o>< p></o> elements on a page like this:<br>"+
+    
+      "<br><div class='cav'><div class='flex'><strong>jQuery-Code</strong><button style='float: rig;'>Copy</button></div><pre>// $('p')\n\n</pre></div>"+"<h3>Example</h3>When a user clicks on a button, all <o>< p></o> elements will be hidden:<h3>Example</h3>"+"<div class='cav'><div class='flex'><strong>jQuery-Code</strong><button style='float: rig;'>Copy</button></div><pre>// $(document).ready(function(){\n\n$('button').click(function(){ \n\n$('p').hide();\n\n});\n\n});\n\n</pre></div>"
+  },{
+    title: "jQEvent Methods ",
+    narate: "15mins",
+    text: "<h2>jQEvent Methods </h1><p>jQuery is tailor-made to respond to events in an HTML page.<hr><h3>What are Events?</h3>All the different visitors' actions that a web page can respond to are called events.<br>An event represents the precise moment when something happens.<br><ul><strong>Examples:</strong><br><li>moving a mouse over an element</li><li>selecting a radio button</li><li>clicking on an element</li></ul>" +
+      " <div class='cav'><div class='flex'><strong>jQuery-Code</strong><button style='float: rig;'>Copy</button></div><pre>// $('p').click();\n\n</pre></div><br>The next step is to define what should happen when the event fires. You must pass a function to the event:\n\n<br><br><div class='cav'><div class='flex'><strong>jQuery-Code</strong><button style='float: rig;'>Copy</button></div><pre>// $('p').click(function(){\n\n  // action goes here!!\n\n});\n\n</pre></div>"+"<br><br><div class='bottom'><div class='bottom-nav'><div class='pre'><a href='pd files.html'><img src='icon/JS.png'width='50px'height='50px'style='border-radius:20px;margin-top: 5px;'onclick='aler'/><i>Learn JavaScript</i></a></div></div></div><h2>Commonly Used jQuery Event Methods</h2><h4>$(document).ready()</h4>The <mark>$(document).ready()</mark> method allows us to execute a function when the document is fully loaded. This event is already explained in the jQuery Syntax chapter.<h4>click()</h4>The <mark>click()</mark> method attaches an event handler function to an HTML element.<br>The function is executed when the user clicks on the HTML element.<br>The following example says: When a click event fires on a < p> element; hide the current < p> element:<br><br><h4>Example</h4><div class='cav'><div class='flex'><strong>jQuery-Code</strong><button style='float: rig;'>Copy</button></div><pre>// $('p').click(function(){\n\n$(this).hide();\n\n});\n\n</pre></div><br><h4>dblclick()</h4>The <mark>dblclick()</mark> method attaches an event handler function to an HTML element.<br><br>The function is executed when the user double-clicks on the HTML element:<h4>Example</h4><div class='cav'><div class='flex'><strong>jQuery-Code</strong><button style='float: rig;'>Copy</button></div><pre>// $('p').dblclick(function(){\n\n$(this).hide();\n\n});\n\n</pre></div><h4>mouseenter()</h4>The <mark>mouseenter()</mark> method attaches an event handler function to an HTML element.<br><br>The function is executed when the mouse pointer enters the HTML element:<br><h4>Example</h4><div class='cav'><div class='flex'><strong>jQuery-Code</strong><button style='float: rig;'>Copy</button></div><pre>// $('#p1').mouseenter(function(){\n\n$alert('You entered p1!');\n\n});\n\n</pre></div><h4>mouseleave()</h4>The <mark>mouseleave()</mark> method attaches an event handler function to an HTML element.<br><br>The function is executed when the mouse pointer leaves the HTML element:<h4>Example</h4><div class='cav'><div class='flex'><strong>jQuery-Code</strong><button style='float: rig;'>Copy</button></div><pre>// ('#p1').mouseleave(function(){\n\nalert('Bye! You now leave p1!');\n\n});\n\n</pre></div>"
+  },  {
+    title: "jQ  Hide & Show",
+    narate: "jQuery Effects",
+    text: "<h2>jQuery Effects - Hide and Show</h1>\n\n<br><h3>jQuery hide() and show()</h3>With jQuery, you can hide and show HTML elements with the <mark>hide()</mark> and <mark>show()</mark> methods:<br><br><strong>Example</strong><br>" +
+      "<div class='cav'><div class='flex'><strong>jQuery-Code</strong><button style='float: rig;'>Copy</button></div><pre>// $('#hide').click(function(){\n\n $('p').hide();\n\n});\n\n$('#show').click(function(){\n\n $('p').show();\n\n});\n\n</pre></div>"+
+      "<strong>Syntax:</strong><br><div class='cav'><div class='flex'><strong>jQuery-Code</strong><button style='float: rig;'>Copy</button></div><pre>$(selector).hide(speed,callback);\n\n\n\n$(selector).show(speed,callback);\n\n</pre></div>"+"The optional speed parameter specifies the speed of the hiding/showing, and can take the following values: 'slow', 'fast', or milliseconds.\n\n<br><br>The optional callback parameter is a function to be executed after the <mark>hide()</mark> or <mark>show()</mark> method completes (you will learn more about callback functions in a later chapter).\n\n<br><br>The following example demonstrates the speed parameter with hide():\n\n<br><br><strong>Example</strong><div class='cav'><div class='flex'><strong>jQuery-Code</strong><button style='float: rig;'>Copy</button></div><pre> $('button').click(function(){\n\n  $('p').hide(1000);\n\n});\n\n</pre></div>\n\n<br><br>" +"<h3jQuery toggle()</h3>You can also toggle between hiding and showing an element with the <mark>toggle()</mark> method.<br><br>Shown elements are hidden and hidden elements are shown:<br><br><strong>Example</strong><br><br><div class='cav'><div class='flex'><strong>jQuery-Code</strong><button style='float: rig;'>Copy</button></div><pre>$('button').click(function(){\n\n $('p').toggle();\n\n});\n\n</pre></div>"+"<br><br>\n\n<div class='bottom'><div class='bottom-nav'><div class='pre'><a href='pd files.html'><img src='icon/JS.png'width='50px'height='50px'style='border-radius:20px;margin-top: 5px;'onclick='aler'/><i>Learn JavaScript</i></a></div></div></div>"
+  } ,{
+    title: "jQ fadeIn()",
+    narate: "15mins",
+    text: "Wrap a < div> element around all < p> elements:<br><br><div class='cav'><div class='flex'><strong>jQuery-Code</strong><button style='float: rig;'>Copy</button></div><pre>"+'$("p").bind("click", function(){\n\nalert("The paragraph was clicked.");\n\n});\n\n</pre></div><br><br>The bind() method was deprecated in version 3.0. Use the on() method instead.<br><br>The bind() method attaches one or more event handlers for selected elements, and specifies a function to run when the event occurs.<br><br>' 
+  
+  } ,{
+    title: "jQ- Sliding",
+    narate: "25mins",
+    text: "<h4>jQuery Sliding Methods</h4>With jQuery you can create a sliding effect on elements.<br><br>jQuery has the following slide methods<ul><li><mark>slideDown()</mark></li><br><li><mark>slideUp()</mark></li><br><li><mark>slideToggle()</mark></li></ul><h4>jQuery slideDown() Method</h4>The jQuery slideDown() method is used to slide down an element.<br><h4>Syntax:</h4><div class='cav'><div class='flex'><strong>jQuery-Code</strong><button style='float: rig;'>Copy</button></div><pre>$(selector).slideDown(speed,callback);\n\n\n</pre></div>The optional speed parameter specifies the duration of the effect. It can take the following values: 'slow', 'fast', or milliseconds.<br><br>The optional callback parameter is a function to be executed after the sliding completes.<br><br>The following example demonstrates the <mark>slideDown()</mark> method:<h4>Syntax:</h4><div class='cav'><div class='flex'><strong>jQuery-Code</strong><button style='float: rig;'>Copy</button></div><pre>$('#flip').click(function(){\n\n$('#panel').slideDown();\n\n});\n\n\n</pre></div><h4>jQuery slideUp() Method</h4>The <mark>jQuery slideUp()</mark> method is used to slide up an element.<br><br><h4>Syntax:</h4>"+"<div class='cav'><div class='flex'><strong>jQuery-Code</strong><button style='float: rig;'>Copy</button></div><pre>$(selector).slideUp(speed,callback);\n\n\n\n</pre></div>"+"The optional speed parameter specifies the duration of the effect. It can take the following values: 'slow', 'fast', or milliseconds.<br><br>The optional callback parameter is a function to be executed after the sliding completes.<br><br>The following example demonstrates the <mark>slideUp()</mark> method:"+"<h4>Syntax:</h4><div class='cav'><div class='flex'><strong>jQuery-Code</strong><button style='float: rig;'>Copy</button></div><pre>$('#flip').click(function(){\n\n$('#panel').slideUp();\n\n});\n\n</pre></div><h3>jQuery slideToggle() Method</h3>The jQuery slideToggle() method toggles between the <mark>slideDown()</mark> and <mark>slideUp()</mark> methods.<br><br>If the elements have been slid down, <mark>slideToggle()</mark> will slide them up.<br><br>If the elements have been slid up, <mark>slideToggle()</mark> will slide them down.<br><br>"+"<div class='cav'><div class='flex'><strong>jQuery-Code</strong><button style='float: rig;'>Copy</button></div><pre>$(selector).slideToggle(speed,callback);\n\n\n</pre></div>"+"<br><br>The optional speed parameter can take the following values: 'slow', 'fast', milliseconds.<br><br>The optional callback parameter is a function to be executed after the sliding completes.<br><br>The following example demonstrates the slideToggle() method:<h3>Example</h3>"+"<div class='cav'><div class='flex'><strong>jQuery-Code</strong><button style='float: rig;'>Copy</button></div><pre>$('#flip').click(function(){\n\n$('#panel').slideToggle();\n\n});\n\n\n\n</pre></div>"
+  
+  } ,{
+    title: "jQ-Animate",
+    narate: "25mins",
+    text: "<h2>jQuery Effects - Animation</h1><p>With jQuery, you can create custom animations"+"jQuery Animations - The <mark>animate()</mark>Method<br><br>The jQuery <mark>animate()</mark> method is used to create custom animations.<h4>Syntax:</h4>"+"<div class='cav'><div class='flex'><strong>jQuery-Code</strong><button style='float: rig;'>Copy</button></div><pre>$(selector).animate({params},speed,callback);\n\n\n\n</pre></div>"+"The required params parameter defines the CSS properties to be animated.<br><br>The optional speed parameter specifies the duration of the effect. It can take the following values: 'slow', 'fast', or milliseconds.<br><br>The optional callback parameter is a function to be executed after the animation completes.<br><br>The following example demonstrates a simple use of the <mark>animate() </mark>method; it moves a <div> element to the right, until it has reached a left property of 250px:<h4>Example</h4>"+"<div class='cav'><div class='flex'><strong>jQuery-Code</strong><button style='float: rig;'>Copy</button></div><pre>$('button').click(function(){\n\n $('div').animate({left: '250px'});\n\n});\n\n\n\n</pre></div>"
+  
+  }  ,{
+    title: "jQ Stop()",
+    narate: "20mins",
+    text: "<h2>jQuery stop() Method</h2>\n\nThe <mark>jQuery stop()</mark> method is used to stop an animation or effect before it is finished.<br><br>The <mark> stop()</mark> method works for all jQuery effect functions, including sliding, fading and custom animations.<br><br><br><strong>Syntax</strong>:\n\n<br><br><div class='cav'><div class='flex'><strong>jQuery-Code</strong><button style='float: rig;'></button></div><pre>$(selector).stop(stopAll,goToEnd);\n\n</pre></div>The optional stopAll parameter specifies whether also the animation queue should be cleared or not. Default is false, which means that only the active animation will be stopped, allowing any queued animations to be performed afterwards.<br><br>The optional goToEnd parameter specifies whether or not to complete the current animation immediately. Default is false.<br><br>So, by default, the <mark>stop()</mark>method kills the current animation being performed on the selected element.<br><br>The following example demonstrates the <mark>stop()</mark>method, with no parameters:<br><br><br><strong>Example</strong><br><br><br><div class='cav'><div class='flex'><strong>jQuery-Code</strong><button style='float: rig;'>Copy</button></div><pre>$('#stop').click(function(){\n\n$('#panel').stop();\n\n}); \n\n<br></pre></div>" + "<br><br><br><br><br><div class='bottom'><div class='bottom-nav'><div class='pre'><a href='pd files.html'><img src='icon/JS.png'width='50px'height='50px'style='border-radius:20px;margin-top: 5px;'onclick='aler'/><i>Learn JavaScript</i></a></div></div></div>"
+
+  }   , {
+    title: "jQ Callback",
+    narate: "20mins",
+    text: "<h2>jQuery Callback Functions</h2>\n\JavaScript statements are executed line by line. However, with effects, the next line of code can be run even though the effect is not finished. This can create errors.<br><br>To prevent this, you can create a callback function.<br><br>A callback function is executed after the current effect is finished.<br><br>Typical syntax:<br><br><strong>$(selector).hide(speed,callback);</strong><h3>Examples</h3>The example below has a callback parameter that is a function that will be executed after the hide effect is completed:<br><h3>Example with Callback</h3><br><div class='cav'><div class='flex'><strong>jQuery-Code</strong><button style='float: rig;'>Copy</button></div><pre>$"+'("button").click(function(){\n\n$("p").hide("slow", function(){\n\n alert("The paragraph is now hidden"); });\n\n});\n</pre></div><br><br>The example below has no callback parameter, and the alert box will be displayed before the hide effect is completed:<h3>Example without Callback</h3>'+"<br><div class='cav'><div class='flex'><strong>jQuery-Code</strong><button style='float: rig;'>Copy</button></div><pre>$"+'("button").click\n\n(function(){\n\n$("p").hide(1000);\n\n alert("The paragraph is now hidden");\n\n});</pre></div>'
+    },{
+      title: "jQ Get",
+      narate: "10mins",
+      text: "<h2>jQuery - Get Content and Attributes</h2>jQuery contains powerful methods for changing and manipulating HTML elements and attributes.<h2>jQuery DOM Manipulation</h2>One very important part of jQuery is the possibility to manipulate the DOM.<br><br>jQuery comes with a bunch of DOM related methods that make it easy to access and manipulate elements and attributes.<br>Three simple, but useful, jQuery methods for DOM manipulation are:<ul><li><mark>text()</mark> Sets or returns the text content of selected elements</li><li><mark>html()</mark> - Sets or returns the content of selected elements (including HTML markup)</li> <li><mark>val()</mark> - Sets or returns the value of form fields</li></ul>The following example demonstrates how to get content with the jQuery <mark>text()</mark> and <mark>html()</mark> methods:"+"<br><div class='cav'><div class='flex'><strong>jQuery-Code</strong><button style='float: rig;'>Copy</button></div><pre>$('#btn1').click(function(){\n\nalert('Text: ' +\n\n $('#test').text());\n\n});\n\n$('#btn2').click(function(){\n\nalert('HTML: ' +\n\n $('#test').html());\n\n});\n\n</pre></div><br>The following example demonstrates how to get the value of an input field with the jQuery <mark>val()</mark> method:<h3>Example</h3>"+"<br><div class='cav'><div class='flex'><strong>jQuery-Code</strong><button style='float: rig;'>Copy</button></div><pre>$('#btn1').click(function(){\n\nalert('Value: ' +\n\n $('#test').val());\n\n});\n\n</pre></div><h3>Get Attributes - attr()</h3>The jQuery <mark>attr()</mark> method is used to get attribute values.<br>The following example demonstrates how to get the value of the href attribute in a link:"+"<h3>example</h3><div class='cav'><div class='flex'><strong>jQuery-Code</strong><button style='float: rig;'>Copy</button></div><pre>$('button').click(function(){\n\n alert($('#w3s').attr('href'));\n\n});\n\n</pre></div>"
+    },{
+      title: "jQ Add",
+      narate: "10mins",
+      text: "<h2>jQuery - Add Elements</h2>With jQuery, it is easy to add new elements/content.<br><h2>Add New HTML Content</h2>We will look at four jQuery methods that are used to add new content:<ul><li><mark>append()</mark> - Inserts content at the end of the selected elements</li><li><mark>prepend()</mark> - Inserts content at the beginning of the selected elements</li><li><mark>after()</mark> - Inserts content after the selected elements</li><li><mark>before()</mark> - Inserts content before the selected elements</li></ul><h2>jQuery append() Method</h2>The jQuery append() method inserts content AT THE END of the selected HTML elements.<h3>Example</h3><div class='cav'><div class='flex'><strong>jQuery-Code</strong><button style='float: rig;'>Copy</button></div><pre>$('p').append('Some appended text.');\n\n</pre></div>" 
+    },{
+    title: "jQ Remove ",
+    narate: "10mins",
+    text: "<h2>jQuery - Remove Elements</h1>To remove elements and content, there are mainly two jQuery methods:<ul><li><mark>remove()</mark> - Removes the selected element (and its child elements)</li><li><mark>empty()</mark> - Removes the child elements from the selected element</li></ul><h3>jQuery remove() Method</h3>The jQuery <mark>remove()</mark> method removes the selected element(s) and its child elements.<br><br><strong>Example</strong>\n\n" +
+      "<div class='cav'><div class='flex'><strong>jQuery-Code</strong><button style='float: rig;'>Copy</button></div><pre>$('#div1').remove();\n\n</pre></div>"+
+      "<h3>jQuery empty() Method</h3>The jQuery <mark>empty()</mark> method removes the child elements of the selected element(s).<br><br><strong>Example</strong><br><br><div class='cav'><div class='flex'><strong>jQuery-Code</strong><button style='float: rig;'>Copy</button></div><pre>$('#div1').empty()\n\n</pre></div>"
+  },{
+      title: "jQ CSS",
+      narate: "15mins",
+      text: "<h2>jQuery - Get and Set CSS Classes</h2>With jQuery, it is easy to manipulate the style of elements.<h2>jQuery Manipulating CSS</h2>jQuery has several methods for CSS manipulation. We will look at the following methods: <ul><li><mark>addClass()</mark> - Adds one or more classes to the selected elements</li><li><mark>removeClass()</mark>- Removes one or more classes from the selected elements</li> <li><mark>toggleClass()</mark> - Toggles between adding/removing classes from the selected elements</li><li><mark>css()</mark>- Sets or returns the style attribute</li> </ul><h2>jQuery addClass() Method</h2>The following example shows how to add class attributes to different elements. Of course you can select multiple elements, when adding classes:<h3>Example</h3><div class='cav'><div class='flex'><strong>jQuery-Code</strong><button style='float: rig;'>Copy</button></div><pre>"+'$("button").click(function(){\n\n$("h1, h2, p").addClass("blue");\n\n$("div").addClass("important");\n\n});\n\n</pre></div>You can also specify multiple classes within the <mark>addClass()</mark> method:<h3>Example</h3>'+"<div class='cav'><div class='flex'><strong>jQuery-Code</strong><button style='float: rig;'>Copy</button></div><pre>"+'$("button").click(function(){\n\n$("#div1").addClass("important blue");\n\n});\n\n\n</pre></div><h2>jQuery removeClass() Method</h2>'+"<div class='cav'><div class='flex'><strong>jQuery-Code</strong><button style='float: rig;'>Copy</button></div><pre>"+'$("button").click(function(){\n\n$("h1, h2, p").removeClass("blue");\n\n});\n\n</pre></div>'
+    },{
+      title: "jQ Siblings",
+      narate: "20mins",
+      text: "<h2>jQuery Traversing - Siblings</h2>With jQuery you can traverse sideways in the DOM tree to find siblings of an element.<br><br>Siblings share the same parent.<h2>Traversing Sideways in The DOM Tree</h2>There are many useful jQuery methods for traversing sideways in the DOM tree:    <ul><li><mark>siblings()</mark></li><li><mark>next()</mark></li><li><mark>nextAll()</mark></li><li><mark>nextUntil()</mark></li><li><mark>prev()</mark></li><li><mark>prevAll()</mark></li> <li><mark>prevUntil()</mark></li></ul><h2>jQuery siblings() Method</h2>The <mark>siblings()</mark> method returns all sibling elements of the selected element.The following example returns all sibling elements of <mark> < h2></mark>:<h3>Example</h3>"+"<div class='cav'><div class='flex'><strong>jQuery-Code</strong><button style='float: rig;'>Copy</button></div><pre>"+'$(document).ready(function(){\n\n $("h2").siblings();\n\n});\n\n</pre></div><br><br>You can also use an optional parameter to filter the search for siblings.<br><br>The following example returns all sibling elements of <mark>< h2></mark> that are <mark>< p></mark> elements:<h3>Example</h3>'+"<div class='cav'><div class='flex'><strong>jQuery-Code</strong><button style='float: rig;'>Copy</button></div><pre>"+'$(document).ready(function(){\n\n$("h2").siblings("p");\n\n});\n\n</pre></div><h2>jQuery next() Method</h2>The <mark>next()</mark> method returns the next sibling element of the selected element.<br><br>The following example returns the next sibling of <mark>< h2></mark>:<h3>Example</h3>'+"<div class='cav'><div class='flex'><strong>jQuery-Code</strong><button style='float: rig;'>Copy</button></div><pre>"+'$(document).ready(function(){\n\n$("h2").next();\n\n});\n\n</pre></div><h2>jQuery nextAll() Method</h2>The <mark>nextAll()</mark> method returns all next sibling elements of the selected element.<br><br>The following example returns all next sibling elements of <mark>< h2></mark>:<h3>Example</h3>'+"<div class='cav'><div class='flex'><strong>jQuery-Code</strong><button style='float: rig;'>Copy</button></div><pre>"+'$(document).ready(function(){\n\n$("h2").nextAll();\n\n});\n\n</pre></div>'
+    },{
+      title: "jQ Filtering",
+    narate: "15mins",
+    text: "<h2>The first(), last(), eq(), filter() and not() Methods</h2>The most basic filtering methods are <strong>first()</strong>, <strong>last()</strong>and <strong>eq()</strong>, which allow you to select a specific element based on its position in a group of elements.<br><br>Other filtering methods, like<strong> filter()</strong> and <strong>not()</strong> allow you to select elements that match, or do not match, a certain criteria.<h2>jQuery first() Method</h2>The <strong>first()</strong> method returns the first element of the specified elements.The following example selects the first <strong><div></strong> element:<h3>Example</h3>"+"<div class='cav'><div class='flex'><strong>jQuery-Code</strong><button style='float: rig;'>Copy</button></div><pre>"+ '$(document).ready(function(){\n\n$("div").first();\n\n});</pre></div><h2>jQuery last() Method</h2>The <mark>last()</mark> method returns the last element of the specified elements.<br>The following example selects the last <mark><div></mark> element:<br><h4>Example</h4>'+"<div class='cav'><div class='flex'><strong>jQuery-Code</strong><button style='float: rig;'>Copy</button></div><pre>"+'$(document).ready(function(){\n\n $("div").last();\n\n});\n\n</pre></div><h2>jQuery eq() method</h2>The <mark>eq()</mark> method returns an element with a specific index number of the selected elements.<br><br>The index numbers start at 0, so the first element will have the index number 0 and not 1. The following example selects the second <mark>< p></mark> element (index number 1):<h4>Example</h4>'+"<div class='cav'><div class='flex'><strong>jQuery-Code</strong><button style='float: rig;'>Copy</button></div><pre>"+'$(document).ready(function(){\n\n$("p").eq(1);\n\n});\n\n</pre></div><h2>jQuery filter() Method</h2>The <mark>filter()</mark> method lets you specify a criteria. Elements that do not match the criteria are removed from the selection, and those that match will be returned.<br><br>The following example returns all <mark>< p></mark> elements with class name "intro":<h3>Example</h3>'+"<div class='cav'><div class='flex'><strong>jQuery-Code</strong><button style='float: rig;'>Copy</button></div><pre>"+'$(document).ready(function(){\n\n $("p").filter(".intro");\n\n});\n\n</pre></div><h2>jQuery not() Method</h2>The not() method returns all elements that do not match the criteria.<br><br>Tip: The <mark>not()</mark> method is the opposite of <mark>filter()</mark>.<br><br>The following example returns all <mark>< p></mark> elements that do not have class name "intro":<h3>Example</h3>'+"<div class='cav'><div class='flex'><strong>jQuery-Code</strong><button style='float: rig;'>Copy</button></div><pre>"+'$(document).ready(function(){\n\n$("p").not(".intro");\n\n});\n\n</pre></div>'
+    },{
+      title: "jQ AJAX",
+    narate: "10mins",
+    text: "<h2>What is AJAX ?</h2>\n\nAJAX = Asynchronous JavaScript and XML.\n\nIn short; AJAX is about loading data in the background and display it on the webpage, without reloading the whole page.\n\nExamples of applications using AJAX: Gmail, Google Maps, Youtube, and Facebook tabs.\n\n" +
+    "<h2>What About jQuery and AJAX?</h2><br>jQuery provides several methods for AJAX functionality.<br><br>With the jQuery AJAX methods, you can request text, HTML, XML, or JSON from a remote server using both HTTP Get and HTTP Post - And you can load the external data directly into the selected HTML elements of your web page!"+
+    "<h2>jQuery load() Method</h2>The jQuery <o>load()</o> method is a simple, but powerful AJAX method.<br><br>\n\nThe <o>load()</o> method loads data from a server and puts the returned data into the selected element.\n\n<br><br><strong>Syntax:</strong>"
+    +
+      "<br><br><div class='cav'><div class='flex'><strong>jQuery-Code</strong><button style='float: rig;'>Copy</button></div><pre>// $(selector).load(URL,data,callback);\n\n</pre></div>"+
+      "Make asynchronous HTTP requests to load data without refreshing the whole page.```javascript"+
+   "<br><br><div class='cav'><div class='flex'><strong>jQuery-Code</strong><button style='float: rig;'>Copy</button></div><pre>// Example: Load data from server\n\n$.ajax({\n\n url: 'data.json',\n\nsuccess: function(response) {\n\nconsole.log(response);\n\n}\n\n });;\n\n</pre></div>"
+      
+    },{
+      title: "jQ Get/Post",
+      narate: "15min",
+      text: "<h2>jQuery - AJAX get() and post() Methods</h2>The jQuery get() and post() methods are used to request data from the server with an HTTP GET or POST request<h2>HTTP Request: GET vs. POST</h2>Two commonly used methods for a request-response between a client and server are: GET and POST.<ul><li>GET - Requests data from a specified resource</li><li>POST - Submits data to be processed to a specified resource</li></ul>GET is basically used for just getting (retrieving) some data from the server. Note: The GET method may return cached data.<br><br>POST can also be used to get some data from the server. However, the POST method NEVER caches data, and is often used to send data along with the request.<br><br>To learn more about GET and POST, and the differences between the two methods, please read our HTTP Methods GET vs POST chapter.<h2>jQuery $.get() Method</h2>The <mark>$.get()</mark> method requests data from the server with an HTTP GET request.<h3>Syntax:</h3>"+"<div class='cav'><pre>"+'$.get(URL,callback);\n\n</pre></div>The required URL parameter specifies the URL you wish to request.<br><br>The optional callback parameter is the name of a function to be executed if the request succeeds.<br><br>The following example uses the <mark>$.get()</mark> method to retrieve data from a file on the server:<h3>Example</h3>'+"<div class='cav'><div class='flex'><strong>jQuery-Code</strong><button style='float: rig;'>Copy</button></div><pre>"+'$("button").click(function(){\n,\n  $.get("test.asp",\n\n function(data, status){\n\n alert("Data: " + data + "\nStatus: " + status);\n\n});\n\n});\n\n</pre></div>The first parameter of $.get() is the URL we wish to request ("test.asp").<br><br>The second parameter is a callback function. The first callback parameter holds the content of the page requested, and the second callback parameter holds the status of the request.<br><br>Tip: Here is how the ASP file looks like ("test.asp"):'+"<div class='cav'><pre>"+'\n<%\n\nresponse.write("This is some \ntext from an external ASP\n file.")\n\n%>\n\n</pre></div>'
+
+      
+    },{
+      title: "jQ mousedown()",
+      narate: "10mins",
+      text: "<h2>jQuery mousedown() Method</h2><strong>Example</strong><br><br>Press down the left mouse button over a <mark>< div></mark> element to insert some text:<br>"+"<div class='cav'><div class='flex'><strong>jQuery-Code</strong><button style='float: rig;'>Copy</button></div><pre>"+'$("div").mousedown(function(){\n $(this).after("Mouse button\npressed down.");\n});\n\n</pre></div>'
+      
+    },{
+      title: "jQ load()",
+      narate: "10mins",
+      text: "<h2>jQuery load() Method</h2><h3>Example</h3>Alert a text when an image is fully loaded:"+"<div class='cav'><div class='flex'><strong>jQuery-Code</strong><button style='float: rig;'>Copy</button></div><pre>"+'$("img").load(function(){\n\nalert("Image loaded.");\n\n});\n\n</pre></div><br>The load() method attaches an event handler to the load event.<br><br>The load event occurs when a specified element has been loaded.<br><br.This event works with elements associated with a URL (image, script, frame, iframe), and the window object.<br><br>Depending on the browser, the load event may not trigger if the image is cached (Firefox and IE).'
+      
+    },{
+      title: "jQ toggle",
+      narate: "10mins",
+      text: "<h2>jQuery toggle() Method</h2><strong>Example</strong>Toggle between colors when clicking on a <p> element:<br>"+"<div class='cav'><div class='flex'><strong>jQuery-Code</strong><button style='float: rig;'>Copy</button></div><pre>"+'$("p").toggle(\n\nfunction(){$("p").css({"color":\n\n "red"});},\n\nfunction(){$("p").css({"color":\n\n "blue"});},function(){$("p").css({"color":\n\n "green"});\n\n});\n\n</pre></div><br>The toggle() method attaches two or more functions to toggle between for the click event for the selected elements.<br><br>When clicking on an element, the first specified function fires, when clicking again, the second function fires, and so on.'
+      
+    },{
+      title: "jQ click()",
+      narate: "10mins",
+      text: "<h2>jQuery click() Method</h2><strong>Example</strong>Click on a <p> element to alert a text:"+"<div class='cav'><div class='flex'><strong>jQuery-Code</strong><button style='float: rig;'>Copy</button></div><pre>"+'$("p").click(function(){\n\nalert("The paragraph was\n\n clicked.");\n\n});\n\n</pre></div>'+"The click event occurs when an element is clicked.<br><br>The click() method triggers the click event, or attaches a function to run when a click event occurs."
+      
+    },{
+      title: "jQ event..",
+      narate: "10mins",
+      text: "<h2>jQuery event.delegateTarget Property</h2><h3>Example</h3>Change the background color of the < div> element (an ancestor of the < button> element):<br><br>"+"<div class='cav'><div class='flex'><strong>jQuery-Code</strong><button style='float: rig;'>Copy</button></div><pre>"+'$("div").on("click", "button",\n\n function(event){\n\n$(event.delegateTarget).css("ba\n\nckground-color", "pink");\n\n});\n\n</pre></div><br><br>The event.delegateTarget property returns the element where the currently-called jQuery event handler was attached.<br><br>This property is useful for delegated events attached by the on() method, where the event handler is attached at an ancestor of the element being processed.'
+      
+    },{
+      title: "jQ focus()",
+      narate: "10mins",
+      text: "<h2>jQuery focus() Method</h2><strong>Example</strong>Attach a function to the focus event. The focus event occurs when the < input> field gets focus:<br><br>"+"<div class='cav'><div class='flex'><strong>jQuery-Code</strong><button style='float: rig;'>Copy</button></div><pre>"+'$("input").focus(function(){\n\n$("span").css(" display",\n\n "inline").fadeOut(2000);\n\n});\n\n</pre></div><br><br>The focus event occurs when an element gets focus (when selected by a mouse click or by "tab-navigating" to it).<br><br>The focus() method triggers the focus event, or attaches a function to run when a focus event occurs.'
+      
+    },{
+      title: "jQ unload()",
+      narate: "10mins",
+      text: "<h2>jQuery unload() Method</h2>Alert a message when navigating away from the page:<br><br>"+"<div class='cav'><div class='flex'><strong>jQuery-Code</strong><button style='float: rig;'>Copy</button></div><pre>"+'$(window).unload(function (){\n\nalert("Goodbye!");\n\n});\n\n</pre></div>'
+      
+    },{
+      title: "jQ bind()",
+      narate: "jQuery Effects",
+      text: "<h2>jQuery bind() Method</h2><strong>Example</strong>Attach a click event to the <p> element:<br>"+"<div class='cav'><div class='flex'><strong>jQuery-Code</strong><button style='float: rig;'>Copy</button></div><pre>"+'$("p").bind("click", function(){\n\nalert("The paragraph was\n\n clicked.");\n\n});\n\n</pre></div><p style="color:red">The bind() method was deprecated in version 3.0. Use the on() method instead.</p>The bind() method attaches one or more event handlers for selected elements, and specifies a function to run when the event occurs.'
+      
+    },{
+      title: "jQ change()",
+      narate: "jQuery Effects",
+      text: "<h2>jQuery change() Method</h2><strong>Example</strong>Alert a text when an < input> field is changed:<br><br>"+"<div class='cav'><div class='flex'><strong>jQuery-Code</strong><button style='float: rig;'>Copy</button></div><pre>"+'$("input").change(function(){\n\nalert("The text has been\n\n changed.");\n\n});\n\n</pre></div><br>The change event occurs when the value of an element has been changed (only works on < input>, < textarea> and < select> elements).<br><br>The change() method triggers the change event, or attaches a function to run when a change event occurs.<br><br>Note: For select menus, the change event occurs when an option is selected. For text fields or text areas, the change event occurs when the field loses focus, after the content has been changed.'
+      
+    },{
+      title: "jQ error()",
+      narate: "25mins",
+      text: "<h2>jQuery error() Method</h2><strong>Example</strong>If the image element encounters an error, replace it with a text:"+"<div class='cav'><div class='flex'><strong>jQuery-Code</strong><button style='float: rig;'>Copy</button></div><pre>"+'$("img").error(function(){\n\n$("img").replaceWith("<p>Error\n\n loading image!</p>");\n\n});\n\n</pre></div>The error() method was deprecated in jQuery version 1.8, and removed in version 3.0.<br><br>The error event occurs when an element encounters an error (if the element is not loaded correctly).<br><br>The error() method triggers the error event, or attaches a function to run when an error event occurs.<br><br>Tip: This method is a shortcut for bind("error", handler).'
+      
+    },{
+      title: "jQ delay()",
+      narate: "25mins",
+      text: "<h2>jQuery delay() Method</h2><h3>Example</h3>Delay different < div> elements:<br>"+"<div class='cav'><div class='flex'><strong>jQuery-Code</strong><button style='float: rig;'>Copy</button></div><pre>"+'$("button").click(function(){\n\n$("#div1").delay("slow")\n\n.fadeIn();\n\n$("#div2").delay("fast")\n\n.fadeIn();\n\n});\n\n</pre></div><br><br>The delay() method sets a timer to delay the execution of the next item in the queue.'
+    },{
+      title: "jQ fadeToggle()",
+      narate: "10mins",
+      text: "<h2>jQuery Traversing - Siblings</h2>"+"<div class='cav'><div class='flex'><strong>jQuery-Code</strong><button style='float: rig;'>Copy</button></div><pre>"+'$("button").click(function(){\n\n$("#div1").fadeToggle();\n\n});\n\n</pre></div>The fadeToggle() method toggles between the fadeIn() and fadeOut() methods.<br><br>If the elements are faded out, fadeToggle() will fade them in.<br><br>If the elements are faded in, fadeToggle() will fade them out.'
+      
+    },{
+      title: "jQ finish()",
+      narate: "5mins",
+      text: "<h2>jQuery finish() Method</h2><h3>Example</h3>Finish the currently running animation:<br>"+"<div class='cav'><div class='flex'><strong>jQuery-Code</strong><button style='float: rig;'>Copy</button></div><pre>"+'$("#complete").click(function(){\n\n $("div").finish();\n\n});\n\n</pre></div>The finish() method stops the currently-running animations, removes all queued animations, and completes all animations for the selected elements.<br><br>This method is similar to the .stop(true,true) method, except that finish() also causes the CSS property of all queued animations to stop.'
+      
+    },{
+      title: "jQ slideDown()",
+      narate: "5mins",
+      text: "<h2>jQuery slideDown() Method</h2><h3>Example</h3>Slide-down (show) all hidden < p> elements:<br>"+"<div class='cav'><div class='flex'><strong>jQuery-Code</strong><button style='float: rig;'>Copy</button></div><pre>"+'$("button").click(function(){\n\n$("p").slideDown();\n\n});\n\n</pre></div><br>The slideDown() method slides-down (shows) the selected elements.<br><br>Note: slideDown() works on elements hidden with jQuery methods and display:none in CSS (but not visibility:hidden).<br><br>Tip: To slide-up (hide) elements, look at the slideUp() method.'
+      
+    },{
+      title: "jQ slideUp()",
+      narate: "5mins",
+      text: "<h2>jQuery slideUp() Method</h2><h3>Example</h3>Slide-up (hide) all < p> elements:"+"<div class='cav'><div class='flex'><strong>jQuery-Code</strong><button style='float: rig;'>Copy</button></div><pre>"+'$("button").click(function(){\n\n$("p").slideUp();\n\n});\n\n</pre></div>The slideUp() method slides-up (hides) the selected elements.<br><br>Note: Hidden elements will not be displayed at all (no longer affects the layout of the page).<br><br>Tip: To slide-down (show) elements, look at the slideDown() method.'
+      
+    },{
+      title: "jQ stop()",
+      narate: "5mins",
+      text: "<h2>jQuery stop() Method</h2><h3>Example</h3>Stop the currently running animation:"+"<div class='cav'><div class='flex'><strong>jQuery-Code</strong><button style='float: rig;'>Copy</button></div><pre>"+'$("#stop").click(function(){\n\n $("div").stop();\n\n});\n\n</pre></div><br>The stop() method stops the currently running animation for the selected elements.'
+      },{
+      title: "END",
+      narate: "***",
+      text:"if you still want more knowledge about jQuery visit some website like:<ul><li>w3.schools.com</li><li>YouTube (jQuary_Courses)</li><li>jQuery pdf</pdf></ul>"
+      }
+
+];
+
+ var grid =document.getElementById("grid");
+        for(y =0; y < Topics.length;y++){
+        
+        grid.innerHTML+=`<div class="card">
+					<img src="icon.jpg" width="60px"/>
+					<b style="color:black;">${Topics[y].title}</b>
+					<span style="color:black;font-siz:4px">${Topics[y].narate}</span>
+					<a href="#${y}">Learn</a>
+					
+										<div class="AllView Steps" id="${y}">
+						
+					
+				<div class="nav">
+						<b>${Topics[y].title}</b>
+						<a href="#" class="close" ><img src="arrow.png" width="20px" value="Forward" onclick="goForward()"></a>
+						</div>
+				<br><br><br>
+		
+		
+				  ${Topics[y].text}
+	
+</div></div>
+				`;
+				
+				
+				}
+				function goForward() {
+  window.history.forward()
+}
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2788740884620988"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-2788740884620988"
+     data-ad-slot="5643581985"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2788740884620988"
+     crossorigin="anonymous"></script>
+</body>
+</html>
